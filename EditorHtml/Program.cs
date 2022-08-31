@@ -9,8 +9,6 @@ namespace EditorHtml {
         static void Main(string[] args) {
             Menu.Show();
 
-            Console.WriteLine();
-            Console.WriteLine("Aperte uma tecla para fechar a aplicação...");
             Console.ReadKey();
         }
     }
