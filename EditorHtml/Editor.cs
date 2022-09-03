@@ -42,7 +42,7 @@ namespace EditorHtml {
             }
         }
 
-        private static void FileSave(string texto) {
+        private static void FileSave(string text) {
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Green;
             Console.ForegroundColor = ConsoleColor.White;
@@ -51,7 +51,7 @@ namespace EditorHtml {
             var caminho = Console.ReadLine();
 
             using (var arquivo = new StreamWriter(caminho)) {
-                arquivo.Write(texto);
+                arquivo.Write(text);
             }
 
             Console.WriteLine(" Arquivo " + caminho + " salvo com sucesso!");

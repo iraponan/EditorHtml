@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +67,7 @@ namespace EditorHtml {
             switch(option) {
                 case 1: Editor.Show(); 
                     break;
-                case 2: Console.WriteLine("View");
+                case 2: Viewer.Show(OpenFile());
                     break;
                 case 0: {
                         Console.Clear();
@@ -75,6 +76,18 @@ namespace EditorHtml {
                     }
                 default: Show();
                     break;
+            }
+        }
+
+        private static string OpenFile() {
+            Console.Clear();
+            Console.WriteLine("Qual o caminho do arquivo?");
+
+            string dir = Console.ReadLine();
+
+            using (var file = new StreamReader(dir)) {
+                string text = file.ReadToEnd();
+                return text;
             }
         }
     }
